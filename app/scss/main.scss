@@ -1,0 +1,68 @@
+@import "vars";
+//@import "extends";
+//@import "buttonGlare";
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  }
+
+body {
+    font-family: 'Arial', sans-serif;
+    font-weight: normal;
+    font-size: 0.875em;
+    color:$textColor;
+    background-color: #fff;
+  }
+@media (min-width: 768px) { body {font-size: 1em} }
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 240px;
+  background: url('../img/width-border.png') no-repeat center bottom;
+    .logo {
+      display: block;
+      img {
+        height: 80px;
+      }//.img
+    }//.logo
+    .phone {
+      font-size: 1.5em;
+      letter-spacing: 1px;
+    }
+    a.glare {
+      display:block;
+      color: #2d2d2d;
+      padding: 12px 12px;
+      font-family: "Helvetica";
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 1em;
+      overflow: hidden;
+      text-decoration: none;
+      width:180px;
+      margin-bottom: 10px;
+      text-align:center;
+      border: #000 solid 2px;
+    }
+}//.header
+
+@media (min-width: 768px) {
+  .header {
+    max-width: 1024px;
+    margin: 0 auto;
+    flex-direction: row;
+    height: 120px;
+      .phone {margin-top: 20px}
+      a.glare {margin-top: 20px}
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {max-width: 1180px}
+}
