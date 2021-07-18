@@ -16,6 +16,10 @@ body {
     color:$textColor;
     background-color: #fff;
   }
+//Блокируем скролинг при открытом меню
+body.lock {
+  //overflow: hidden;
+}
 @media (min-width: 768px) { body {font-size: 1em} }
 
 .header {
@@ -89,6 +93,7 @@ body {
     position: relative;
     width: 40px;
     height: 40px;
+    margin-right: 10px;
     &:before,&:after {
       content: '';
       background-color: #000;
@@ -124,12 +129,21 @@ body {
     }
   }//burger.activ
   .mainMenu {
-
+    display: none;
+    position: absolute;
+    top:50px;
+    width: 220px;
+    background-color: #fff;
+    padding-bottom: 20px;
+  //  overflow: auto;
+    transition: all 0.3s ease 0s;//Кажется не работает
+    z-index: 20;
     .list {
       //display: flex;
 
       li {
         list-style: none;
+        margin-top: 20px;
 
         a.link {
           color:#000;
@@ -138,9 +152,12 @@ body {
           letter-spacing: 1px;
           text-transform: uppercase;
           text-decoration: none;
-          margin-left: 20px;
+          padding-left: 20px;
         }//a.link
       }//li
     } //list
   }//mainMenu
+  .mainMenu.active {
+    display: block;
+  }
 }//menubox
