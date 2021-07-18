@@ -161,3 +161,39 @@ body.lock {
     display: block;
   }
 }//menubox
+@media (min-width: 769px) {
+  .menubox {
+    margin: 0 auto;
+    justify-content: center;
+    .burger {display: none}
+    .mainMenu {
+      display: block;
+      position: relative;
+      top:0;
+      width: 100%;
+      background-color: inherit;
+      ul.list {
+        display: flex;
+        justify-content: space-around;
+        li {
+          a.link{
+            font-size: 0.875em;
+            padding-left: 0;
+          }
+        }//li
+      }//list
+    }//mainMenu
+  }//menubox
+}//media min 769
+@media (min-width: 1024px) {
+  .menubox {
+    max-width: 1180px;
+    .mainMenu{
+      ul.list {
+        li {
+          a.link {font-size: 1.125em;}
+        }
+      }
+    }
+  }
+}
