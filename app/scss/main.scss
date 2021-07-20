@@ -190,29 +190,27 @@ body.lock {
   }
 }
 
+hr {
+  height: 2px;
+  margin: 10px 0 0;
+  background:url('../img/width-border.png') no-repeat center;
+  border: none;
+}
+h2 { text-transform: uppercase; }
+
 .products {
   max-width: 320px;
   padding-left: 15px;
   padding-right: 15px;
-  border: red solid 1px;
-  h2 { text-transform: uppercase; }
-  hr {
-    height: 2px;
-    margin: 10px 0 0;
-    background:url('../img/width-border.png') no-repeat center;
-    border: none;
-  }
+
   .catalog {
     margin-top: 20px;
     display:flex;
     flex-direction: column;
-    border: blue solid 1px;
     .item {
       flex-basis:290px;
       margin-bottom: 20px;
-      border: red solid 1px;
       .photo_item {
-        border: green solid 1px;
         max-width: 100%;
         img.photo {
           width: 100%;
@@ -230,14 +228,6 @@ body.lock {
 @media (min-width:320px){
   .products {
     max-width: 768px;
-    h2 {}
-    hr {}
-    .catalog {
-      .item {
-        .photo_item{
-        }
-      }
-    }
   }
 }
 @media (min-width:450px){
@@ -247,13 +237,11 @@ body.lock {
       justify-content: flex-start;
       flex-wrap: wrap;
       .item {
-        flex: 1 1 197px;
-        min-width: 197px;
+        flex: 1 1 170px;
+        min-width: 180px;
         max-width: 266px;
         margin-right: 10px;
         margin-left: 10px;
-        .photo_item{
-        }
       }
     }
   }
@@ -262,6 +250,11 @@ body.lock {
   .products {
     max-width: 1024px;
     margin: 0 auto;
+    .catalog {
+      .item {
+        min-width: 220px;
+      }
+    }
   }
 }
 
@@ -273,8 +266,6 @@ body.lock {
       justify-content: space-between;
       .item {
         flex: 0 0 30%;
-        .photo_item{
-        }
       }
     }
   }
@@ -288,9 +279,35 @@ body.lock {
       .item {
         max-width: inherit;
         flex: 1 0 30%;
-        .photo_item{
-        }
       }
     }
   }
+}
+
+.describe_back {
+  background: #f8f8f8;
+.describe {
+  padding: 15px;
+  p {
+    margin-top: 10px;
+    text-align: justify;
+  }
+}
+}
+
+@media (min-width: 768px) {
+  .describe {
+    max-width: 1024px;
+    margin: 0 auto;    
+  }
+}
+
+@media (min-width: 1024px) {
+  .describe {max-width: 1180px}
+}
+
+.footer_back {
+  padding: 15px;
+  background: #383838;
+  color:#fff;
 }
