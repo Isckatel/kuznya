@@ -22,6 +22,9 @@ body.lock {
 }
 @media (min-width: 769px) { body {font-size: 1em} }
 
+a {text-decoration: none;}
+
+
 .header {
   display: flex;
   flex-direction: column;
@@ -221,7 +224,10 @@ h2 { text-transform: uppercase; }
         font-weight:bold;
         margin-top: 10px;
       }
-      .title_item {text-transform: uppercase}
+      .title_item {
+        text-transform: uppercase;
+        a:active, a:hover, a { color: #000}
+      }
     }//item
   }//catalog
 }//products
