@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const rename = require('gulp-rename');
 const browseSync = require('browser-sync').create();
+const autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('copyJS', function(){
   return gulp.src('app/js/*.js')
@@ -27,6 +28,15 @@ gulp.task('default', function(){
   gulp.watch('app/scss/*.scss', gulp.series('sassToCSS'));
   gulp.watch('app/js/*.js', gulp.series('copyJS'));
   gulp.watch('app/**/*.html', gulp.series('copyHTML'));
+});
+
+gulp.task('autoPrefixCSS', function(){
+  return gulp.src('public/css/main.css')
+    .pipe(autoprefixer({
+      overrideBrowserslist:['last 10 versions'],
+      cascade: false
+    }))
+    .pipe(gulp.dest('public/css'));
 });
 
 gulp.task('serve', function(){
